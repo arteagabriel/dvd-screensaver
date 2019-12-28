@@ -1,11 +1,19 @@
 <template>
-    <main :class="$style.body">
-    </main>
+    <div>
+        <Screensaver />
+
+        <Toolbar />
+    </div>
 </template>
 
-<style module lang="scss">
-    .body {
-        height: 100vh;
-        width: 100%;
+<script>
+    import Screensaver from '../components/Screensaver';
+    import Toolbar from '../components/Toolbar';
+
+    export default {
+      components: {
+        Screensaver,
+        Toolbar
+      }
     }
-</style>
+</script>

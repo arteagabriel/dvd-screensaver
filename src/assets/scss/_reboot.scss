@@ -278,6 +278,11 @@ table {
   border-collapse: collapse; /* Prevent double borders */
 }
 
+th,
+td {
+  padding: $table-cell-padding;
+}
+
 caption {
   padding-top: $table-cell-padding;
   padding-bottom: $table-cell-padding;
