@@ -26,6 +26,12 @@ export default new Vuex.Store({
     },
     setVelocityY(state, velocityY) {
       state.velocityY = velocityY;
+    },
+    setPositionX(state, positionX) {
+      state.positionX = positionX;
+    },
+    setPositionY(state, positionY) {
+      state.positionY = positionY;
     }
   },
   actions: {

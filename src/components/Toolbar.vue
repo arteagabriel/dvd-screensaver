@@ -18,9 +18,23 @@
             Velocity Y
         </Range>
 
-        <Range>Position X</Range>
+        <Range
+            :min="0"
+            :max="maxPositionX"
+            :value="parseInt($store.state.positionX)"
+            @range-input="event => $store.commit('setPositionX', event.target.value)"
+        >
+            Position X
+        </Range>
 
-        <Range>Position Y</Range>
+        <Range
+            :min="0"
+            :max="maxPositionY"
+            :value="parseInt($store.state.positionY)"
+            @range-input="event => $store.commit('setPositionY', event.target.value)"
+        >
+            Position Y
+        </Range>
 
         <Checkbox>Show Stats</Checkbox>
 
@@ -45,11 +59,16 @@
         Range,
         Checkbox
       },
-      // methods: {
-      //   handleVelocityXInput: function(event) {
-      //     this.$store.commit('setVelocityX', event.target.value);
-      //   }
-      // }
+      data: function() {
+        return {
+          maxPositionX: null,
+          maxPositionY: null
+        }
+      },
+      mounted: function() {
+        this.maxPositionX = window.innerWidth - 1;
+        this.maxPositionY = window.innerHeight - 1;
+      }
     }
 </script>
 
