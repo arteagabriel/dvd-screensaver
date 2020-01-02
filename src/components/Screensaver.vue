@@ -73,11 +73,15 @@
     .stats {
         position: absolute;
         left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 1rem;
         opacity: 0;
         transition: 0.2s ease-in-out;
         pointer-events: none;
+
+        @media (min-width: 576px) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
         &.statsActive {
             opacity: 1;

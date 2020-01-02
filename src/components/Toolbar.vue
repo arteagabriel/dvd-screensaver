@@ -50,15 +50,20 @@
     .toolbar {
         position: fixed;
         top: 1rem;
+        left: 1rem;
         right: 1rem;
         background-color: $white;
         padding: 1rem;
         border-radius: 0.25rem;
-        width: 375px;
         box-shadow: 0 4px 6px -1px rgba($black, 0.1), 0 2px 4px -1px rgba($black, .05);
         opacity: 0;
         pointer-events: none;
         transition: 0.2s opacity ease-in-out;
+
+        @media (min-width: 576px) {
+            left: auto;
+            width: 375px;
+        }
 
         &.toolbarActive {
             opacity: 1;
