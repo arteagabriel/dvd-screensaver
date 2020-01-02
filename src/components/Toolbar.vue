@@ -3,37 +3,21 @@
         <h1 :class="$style.title">Options</h1>
 
         <Range
-            :max="10"
+            :max="25"
             :value="parseInt($store.state.velocityX)"
-            @range-input="event => $store.commit('setVelocityX', event.target.value)"
+            :id="'velocityX'"
+            @range-input="event => $store.commit('setVelocityX', parseInt(event.target.value))"
         >
             Velocity X
         </Range>
 
         <Range
-            :max="10"
+            :max="25"
             :value="parseInt($store.state.velocityY)"
-            @range-input="event => $store.commit('setVelocityY', event.target.value)"
+            :id="'velocityY'"
+            @range-input="event => $store.commit('setVelocityY', parseInt(event.target.value))"
         >
             Velocity Y
-        </Range>
-
-        <Range
-            :min="0"
-            :max="maxPositionX"
-            :value="parseInt($store.state.positionX)"
-            @range-input="event => $store.commit('setPositionX', event.target.value)"
-        >
-            Position X
-        </Range>
-
-        <Range
-            :min="0"
-            :max="maxPositionY"
-            :value="parseInt($store.state.positionY)"
-            @range-input="event => $store.commit('setPositionY', event.target.value)"
-        >
-            Position Y
         </Range>
 
         <Checkbox>Show Stats</Checkbox>
@@ -58,16 +42,6 @@
         Button,
         Range,
         Checkbox
-      },
-      data: function() {
-        return {
-          maxPositionX: null,
-          maxPositionY: null
-        }
-      },
-      mounted: function() {
-        this.maxPositionX = window.innerWidth - 1;
-        this.maxPositionY = window.innerHeight - 1;
       }
     }
 </script>

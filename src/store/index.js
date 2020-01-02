@@ -5,12 +5,10 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    toolbarActive: true,
-    statsActive: true,
-    velocityX: 1,
-    velocityY: 1,
-    positionX: 0,
-    positionY: 0,
+    toolbarActive: false,
+    statsActive: false,
+    velocityX: 3,
+    velocityY: 3,
     wallCount: 0,
     cornerCount: 0
   },
@@ -27,11 +25,11 @@ export default new Vuex.Store({
     setVelocityY(state, velocityY) {
       state.velocityY = velocityY;
     },
-    setPositionX(state, positionX) {
-      state.positionX = positionX;
+    incrementWallCount(state) {
+      state.wallCount++;
     },
-    setPositionY(state, positionY) {
-      state.positionY = positionY;
+    incrementCornerCount(state) {
+      state.cornerCount++;
     }
   },
   actions: {

@@ -1,11 +1,12 @@
 <template>
     <div :class="$style.rangeGroup">
-        <label :class="$style.label">
+        <label :class="$style.label" :for="id">
             <slot />
         </label>
 
         <input
                 type="range"
+                :id="id"
                 :class="$style.range"
                 :min="min"
                 :max="max"
@@ -34,6 +35,10 @@
         value: {
           type: Number,
           default: 1
+        },
+        id: {
+          type: String,
+          default: null
         }
       },
       methods: {

@@ -1,6 +1,8 @@
 <template>
     <main :class="$style.screensaver" @mousemove="handleMouseMove">
+        <Canvas />
         <Stats :class="[ $style.stats, { [$style.statsActive]: $store.state.statsActive }]" />
+
         <Button
                 :class="[$style.button, { [$style.buttonActive]: mouseMoving && !$store.state.toolbarActive }]"
                 :primary="true"
@@ -12,7 +14,8 @@
 </template>
 
 <script>
-    import Button from './Button'
+  import Canvas from './Canvas';
+  import Button from './Button'
     import Stats from './Stats';
 
     let timeout = null;
@@ -24,6 +27,7 @@
         }
       },
       components: {
+        Canvas,
         Button,
         Stats
       },

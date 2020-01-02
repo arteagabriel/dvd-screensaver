@@ -19,22 +19,6 @@
             </tr>
 
             <tr>
-                <th>Position X</th>
-
-                <td>
-                    {{ $store.state.positionX }}
-                </td>
-            </tr>
-
-            <tr>
-                <th>Position Y</th>
-
-                <td>
-                    {{ $store.state.positionY }}
-                </td>
-            </tr>
-
-            <tr>
                 <th>Wall Count</th>
 
                 <td>
